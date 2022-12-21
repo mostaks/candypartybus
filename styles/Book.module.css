@@ -44,11 +44,29 @@
   flex-direction: column;
 }
 
+@media (max-width: 500px) {
+  .form {
+    justify-content: center;
+  }
+  .fieldContainer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .fieldContainer>input,.fieldContainer>label,.fieldContainer>textarea {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .fieldContainer > input {
   max-width: 300px;
 }
 
-.fieldContainer > input {
+.fieldContainer > textarea {
   max-width: 300px;
 }
 
