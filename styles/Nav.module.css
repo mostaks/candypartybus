@@ -1,0 +1,14 @@
+.nav {
+  display: block;
+  background-image: url("/img/bg-stars.gif");
+  border-bottom: 8px solid grey;
+}
+
+.logoContainer {
+  border-right: 8px solid grey;
+  display: inline-block;
+}
+
+.logo {
+  padding: 10px;
+}

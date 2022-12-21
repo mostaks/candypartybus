@@ -1,0 +1,27 @@
+.footerContainer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer {
+  padding: 2px;
+  border: 1px solid #eaeaea;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  color: red;
+  text-decoration: underline;
+}
+
+.callNow {
+  display: inline-block;
+}
