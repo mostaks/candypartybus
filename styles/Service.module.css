@@ -1,6 +1,6 @@
 .container {
   padding: 0 2rem;
-  background-image: url("/img/bg-stars.gif");
+  background-image: url("/img/bg-thunder.gif");
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -12,8 +12,14 @@
   text-align: center;
 }
 
+.imgContainer {
+  display: flex; 
+  justify-content: center;
+  padding: 50px 0 0;
+}
+
 .middleContainer {
-  padding-top: 150px;
+  padding: 40px 0 60px;
   display: grid;
   margin: auto;
   height: 100%;
@@ -36,7 +42,8 @@
   padding: 8px;
 }
 
-.moveArea {/*normally use body*/
+.moveArea {
+  /*normally use body*/
   padding: 10% 0;
 }
 
@@ -52,7 +59,9 @@
   width: 50px;
   background: #CCC;
 }
-.eye:after { /*pupil*/
+
+.eye:after {
+  /*pupil*/
   position: absolute;
   bottom: 17px;
   right: 10px;
@@ -76,27 +85,34 @@
   fill: none;
   transform: scale(var(--scale));
 }
+
 .lids {
   stroke: var(--color-lid);
   stroke-width: 5%;
 }
+
 .whites {
   fill: var(--color-whites);
 }
+
 .pupil {
   fill: var(--color-pupil);
   cx: 500px;
   cy: 500px;
 }
+
 .glint {
   fill: var(--color-glint);
 }
+
 .pupil-group {
   transform: translate(calc(var(--pupil-x) * 1px), calc(var(--pupil-y) * 1px));
 }
+
 #base-eye {
   display: none;
 }
+
 #grid {
   --num-columns: 1;
   --num-rows: 1;
