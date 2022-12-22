@@ -7,9 +7,18 @@ import { useState } from 'react';
 
 const Desktop = () => {
   const [clickCount, setClickCount] = useState(0);
-
   const visible = { opacity: '1', visibility: 'visible' };
   const hidden = { opacity: '0', visibility: 'hidden' };
+  const showConfig = {
+      from: hidden,
+      to: visible,
+      config: { duration: '200' },
+    };
+  const hideConfig = {
+      from: visible,
+      to: hidden,
+      config: { duration: '200' },
+    };
 
   const [hide, hideApi] = useSpring(() => ({
     from: visible
@@ -27,38 +36,26 @@ const Desktop = () => {
   });
 
   const handleHide = () => {
-    hideApi.start({
-      from: visible,
-      to: hidden,
-      config: { duration: '200' },
-    })
-    showApi.start({
-      from: hidden,
-      to: visible,
-      config: { duration: '200' },
-    })
+    hideApi.start(hideConfig)
+    showApi.start(showConfig)
     setClickCount(clickCount + 1)
   };
 
   const handleShow = () => {
-    showApi.start({
-      from: visible,
-      to: hidden,
-      config: { duration: '200' },
-    })
-    hideApi.start({
-      from: hidden,
-      to: visible,
-      config: { duration: '200' },
-    })
+    showApi.start(hideConfig)
+    hideApi.start(showConfig)
+    if (clickCount >= 5) {
+      setClickCount(clickCount + 1)
+    }
   };
 
+  const renderIf = (num) => clickCount > num && clickCount <= 6;
   return (
     <main className={styles.main}>
         <div className={styles.contentContainer}>
           <div className={styles.grid}>
             <div className={styles.topLeft}>
-              {clickCount > 3 ? (
+              {renderIf(1) ? (
                 <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
                     <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>) : (
@@ -68,7 +65,7 @@ const Desktop = () => {
               )}
             </div>
             <div className={styles.middle}>
-              {clickCount > 4 ? (
+              {renderIf(2) ? (
                 <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
                     <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>) : (
@@ -78,7 +75,7 @@ const Desktop = () => {
               )}
             </div>
             <div className={styles.topRight }>
-              {clickCount > 5 ? (
+              {renderIf(2) ? (
                 <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
                     <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>) : (
@@ -90,7 +87,7 @@ const Desktop = () => {
           </div>
           <div className={styles.gridOuter}>
             <div className={styles.test}>
-              {clickCount > 6 ? (
+              {renderIf(3) ? (
                 <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
                     <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>) : (
@@ -100,7 +97,7 @@ const Desktop = () => {
               )}
             </div>
             <div className={styles.middle}>
-              {clickCount > 10 ? (
+              {renderIf(5) ? (
                 <animated.div style={{...spins}}>
                   <Image onClick={() => window.location.reload()} src="/img/m-rick.gif" height="250" width="300" alt="Pwned" border="0" style={{cursor: 'pointer' }} />
                 </animated.div>
@@ -109,7 +106,7 @@ const Desktop = () => {
               )}
             </div>
             <div className={styles.test}>
-              {clickCount > 7 ? (
+              {renderIf(3) ? (
                 <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
                     <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>) : (
@@ -121,7 +118,7 @@ const Desktop = () => {
           </div>
           <div className={styles.grid}>
             <div className={styles.bottomLeft}>
-              {clickCount < 11 && (
+              {clickCount < 5 && (
                 <animated.div onClick={handleHide} style={{ cursor: 'pointer', ...hide }}>
                   <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>
@@ -130,7 +127,7 @@ const Desktop = () => {
             <div className={styles.middle}>
             </div>
             <div className={styles.bottomRight}>
-              {clickCount > 8 ? (
+              {renderIf(3) ? (
                 <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
                     <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>) : (
@@ -139,17 +136,20 @@ const Desktop = () => {
                 </Link>
               )}
             </div>
+              {clickCount < 2 && (
                 <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
                     <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>
+
+              )}
           </div>
-          {clickCount > 9 ? (
-            <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
-                <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
-            </animated.div>) : (
+          {clickCount <= 4 && (
             <Footer />
           )}
         </div>
+        {renderIf(5) && (
+          <embed src="/rick_rolled.mp3" autostart="true" style={{width: '0'}} />
+        )}
       </main>
   )
 }
