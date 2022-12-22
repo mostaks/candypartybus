@@ -10,6 +10,12 @@ const Footer = () => {
         <a href="https://www.instagram.com/wolfcharters_partybus/?hl=en">Instagram</a> 
         <a href="https://www.facebook.com/Wolf-Charters-Pty-Ltd-Party-Bus-105525084230003/">Faecbook</a>
       </div>
+      <div style={{textAlign: 'center', padding: '8px 0'}}>
+        <span>We Service all of Sydney</span><br />
+        <span>Western Sydney</span><br />
+        <span>Gosford</span><br />
+        <span>Wollongong</span>
+      </div>
     </footer>
   )
 }
