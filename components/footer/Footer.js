@@ -13,7 +13,7 @@ const Footer = () => {
       <div style={{textAlign: 'center', padding: '8px 0'}}>
         <span>We Service all of Sydney</span><br />
         <span>Western Sydney</span><br />
-        <span>Gosford</span><br />
+        <span>Terrigal</span><br />
         <span>Wollongong</span>
       </div>
     </footer>
