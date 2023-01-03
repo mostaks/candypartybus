@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from '../styles/Book.module.css'
+import styles from '../styles/Career.module.css'
 import { useFormik } from "formik"
 import * as yup from 'yup';
 import Nav from "../components/nav";

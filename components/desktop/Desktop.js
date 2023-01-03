@@ -102,7 +102,7 @@ const Desktop = () => {
                   <Image onClick={() => window.location.reload()} src="/img/m-rick.gif" height="250" width="300" alt="Pwned" border="0" style={{cursor: 'pointer' }} />
                 </animated.div>
                 ) : (
-                <Image src="/img/candy-logo-bus.png" height="250" width="300" alt="Space Jam" border="0" />
+                <Image src="/img/candy-logo-bus.png" height="400" width="450" alt="Space Jam" border="0" />
               )}
             </div>
             <div className={styles.test}>
@@ -135,7 +135,7 @@ const Desktop = () => {
                   <Image id="animate" src="/img/p-lineup.gif" height="92" width="103" alt="Careers" border="0"/>
                 </Link>
               )}
-            </div>
+            </div>  
           </div>
           {clickCount <= 2 && (
             <Footer />
