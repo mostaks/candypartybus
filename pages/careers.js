@@ -5,6 +5,7 @@ import * as yup from 'yup';
 import Nav from "../components/nav";
 import { useState } from "react";
 import * as emailjs from 'emailjs-com';
+import Breadcrumb from "../components/breadcrumb";
 
 const validationSchema = yup.object({
   'Full name': yup.string().required('Required field'),
@@ -47,9 +48,10 @@ export default function Careers() {
   });
 
   return (
-    <>
+    <div className={styles.careerContainer}>
       <Nav />
-      <div className={`${styles.container} ${styles.careerContainer}`}>
+      <Breadcrumb page="Careers" link="./careers" />
+      <div className={styles.container}>
         <div className={styles.middle}>
           <Image src="/img/m-behind.gif" width="300" height="300" alt="Enquire within" />
           <form onSubmit={formik.handleSubmit}>
@@ -96,6 +98,6 @@ export default function Careers() {
           </form> 
         </div>
       </div>
-    </>
+    </div>
   )
 }

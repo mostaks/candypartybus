@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useRef } from 'react'
 import Nav from '../components/nav';
 import styles from '../styles/Service.module.css'
+import Breadcrumb from "../components/breadcrumb";
 
 const services = [
   {
@@ -40,8 +41,9 @@ const services = [
 
 export default function WhatWeOffer() {
   return (
-    <>
+    <div className={styles.background}>
       <Nav />
+      <Breadcrumb page="What we offer" link="./whatWeOffer" />
       <div className={styles.container}>
         <div className={styles.imgContainer}>
           <Image src="/img/m-britney.gif" width={100} height={100} />
@@ -55,6 +57,6 @@ export default function WhatWeOffer() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }

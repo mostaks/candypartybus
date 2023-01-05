@@ -5,6 +5,7 @@ import { useFormik } from "formik"
 import Nav from "../components/nav";
 import { useState } from "react";
 import * as emailjs from 'emailjs-com';
+import Breadcrumb from "../components/breadcrumb";
 
 const validationSchema = yup.object({
   'Full name': yup.string().required('Required field'),
@@ -91,9 +92,10 @@ export default function BookNow() {
   }
 
   return (
-    <>
+    <div className={styles.bookContainer}>
       <Nav />
-      <div className={`${styles.container} ${styles.bookContainer}`}>
+      <Breadcrumb page="Book now" link="./bookNow" />
+      <div className={styles.container}>
         <div className={styles.middle}>
           <Image src="/img/m-book.gif" width="300" height="300" alt="Book now" />
           <form onSubmit={formik.handleSubmit}>
@@ -142,6 +144,6 @@ export default function BookNow() {
           </form> 
         </div>
       </div>
-    </>
+    </div>
   )
 }

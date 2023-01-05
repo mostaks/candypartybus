@@ -3,6 +3,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: source-code-pro, monospace;
+  line-height: 1.563;
+  letter-spacing: -.5px;
+  list-style-type: none;
 }
 
 a {
