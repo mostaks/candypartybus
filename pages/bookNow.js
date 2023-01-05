@@ -65,8 +65,7 @@ export default function BookNow() {
       setSubmitted(text === 'OK');
       console.log(text);
     },
-    validationSchema,
-    validateOnBlur: true
+    validationSchema
   });
 
   const renderFormType = (key) => {
@@ -94,50 +93,52 @@ export default function BookNow() {
   return (
     <>
       <Nav />
-      <div className={styles.container}>
+      <div className={`${styles.container} ${styles.bookContainer}`}>
         <div className={styles.middle}>
           <Image src="/img/m-book.gif" width="300" height="300" alt="Book now" />
           <form onSubmit={formik.handleSubmit}>
-            <div className={styles.form}>
+            <div className={`${styles.form} ${styles.formDecoration}`}>
               {Object.entries(formik.values).map(([key, value]) => {
                 const hasError = formik.errors[key] && formik.touched[key];
                 return (
-                  <div className={styles.fieldContainer} key={key}>
-                  <label className={styles.label} htmlFor={key}>{key}</label>
-                  {{
-                    'Other details': (
-                      <textarea
+                  <div className={`${styles.twoCols} ${styles.fieldContainer}`} key={key} style={{
+                    ...(key === 'Other details' && { width: '100%' })
+                  }}>
+                    <label className={styles.label} htmlFor={key}>{key}</label>
+                    {{
+                      'Other details': (
+                        <textarea
+                          id={key}
+                          name={key}
+                          type="text"
+                          onChange={formik.handleChange}
+                          value={value}
+                          style={{
+                            ...(hasError && {border: '1px solid red'})
+                          }}
+                          placeholder={`${key}...`}
+                        />
+                      ),
+                    }[key] || (
+                      <input
                         id={key}
                         name={key}
-                        onBlur={formik.handleBlur}
-                        type="text"
                         onChange={formik.handleChange}
+                        type={renderFormType(key)}
+                        min={renderMin(key)}
                         value={value}
                         style={{
                           ...(hasError && {border: '1px solid red'})
                         }}
+                        placeholder={`${key}...`}
                       />
-                    ),
-                  }[key] || (
-                    <input
-                      id={key}
-                      name={key}
-                      onBlur={formik.handleBlur}
-                      type={renderFormType(key)}
-                      min={renderMin(key)}
-                      onChange={formik.handleChange}
-                      value={value}
-                      style={{
-                        ...(hasError && {border: '1px solid red'})
-                      }}
-                    />
-                  )}
-                  {hasError && <div className={styles.errorBox}>{formik.errors[key]}</div>}
-                </div>
-              )
+                    )}
+                    {hasError && <div className={styles.errorBox}>{formik.errors[key]}</div>}
+                  </div>
+                )
               })}
             </div>
-            <button className={styles.button} disabled={Object.keys(formik.errors).length || submitted} type="submit">Submit</button>
+            <button className={styles.button} disabled={submitted} type="submit">Submit</button>
           </form> 
         </div>
       </div>

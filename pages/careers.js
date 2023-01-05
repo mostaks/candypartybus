@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from '../styles/Career.module.css'
+import styles from '../styles/Book.module.css'
 import { useFormik } from "formik"
 import * as yup from 'yup';
 import Nav from "../components/nav";
@@ -43,20 +43,21 @@ export default function Careers() {
       setSubmitted(text === 'OK');
       console.log(text);
     },
-    validationSchema,
-    validateOnBlur: true
+    validationSchema
   });
 
   return (
     <>
       <Nav />
-      <div className={styles.container}>
+      <div className={`${styles.container} ${styles.careerContainer}`}>
         <div className={styles.middle}>
           <Image src="/img/m-behind.gif" width="300" height="300" alt="Enquire within" />
           <form onSubmit={formik.handleSubmit}>
-            <div className={styles.formCol}>
-              {Object.entries(formik.values).map(([key, value]) => (
-                <div className={styles.fieldContainer} style={{ flexBasis: key === 'Other details' ? '100%' : 'initial' }} key={key}>
+            <div className={`${styles.formCol} ${styles.formDecoration}`}>
+              {Object.entries(formik.values).map(([key, value]) => {
+                const hasError = formik.errors[key] && formik.touched[key];
+                return (
+                <div className={`${styles.singleCol} ${styles.fieldContainer}`} style={{ flexBasis: key === 'Other details' ? '100%' : 'initial' }} key={key}>
                   <label className={styles.label} htmlFor={key}>{key}</label>
                   {{
                     'Other details': (
@@ -66,7 +67,11 @@ export default function Careers() {
                         type="text"
                         onChange={formik.handleChange}
                         value={value}
-                        style={{flex: 1}}
+                        style={{
+                          ...(hasError && {border: '1px solid red'}),
+                          flex: 1
+                        }}
+                        placeholder={`${key}...`}
                       />
                     ),
                   }[key] || (
@@ -76,12 +81,18 @@ export default function Careers() {
                       type="text"
                       onChange={formik.handleChange}
                       value={value}
+                      style={{
+                          ...(hasError && {border: '1px solid red'})
+                      }}
+                      placeholder={`${key}...`}
                     />
                   )}
+                  {hasError && <div className={styles.errorBox}>{formik.errors[key]}</div>}
                 </div>
-              ))}
+              )
+              })}
             </div>
-            <button className={styles.button} disabled={Object.keys(formik.errors).length || submitted} type="submit">Submit</button>
+            <button className={styles.button} disabled={submitted} type="submit">Submit</button>
           </form> 
         </div>
       </div>
