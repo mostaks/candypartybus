@@ -12,16 +12,16 @@ const validationSchema = yup.object({
   'Residential address': yup.string().required('Required field'),
   'Email': yup.string().email().required('Required field'),
   'Phone number': yup.number().required('Required field'),
-  'Date': yup.string().required('Required field'),
-  'Number of passengers': yup.number().required('Required field'),
-  'First pick up location': yup.string().required('Required field'),
-  'First pick up time': yup.string(),
-  'First drop off location': yup.string().required('Required field'),
-  'First drop off time': yup.string(),
-  'Second pick up location': yup.string().required('Required field'),
-  'Second pick up time': yup.string(),
-  'Second drop off location': yup.string().required('Required field'),
-  'Second drop off time': yup.string(),
+  'Date of trip': yup.string().required('Required field'),
+  'Rough # of passengers': yup.number().required('Required field'),
+  'First departure location': yup.string().required('Required field'),
+  'First departure time': yup.string(),
+  'First arrival location': yup.string().required('Required field'),
+  'First arrival time': yup.string(),
+  'Second departure location': yup.string().required('Required field'),
+  'Second departure time': yup.string(),
+  'Second arrival location': yup.string().required('Required field'),
+  'Second arrival time': yup.string(),
   'Other details': yup.string(),
 })
 
@@ -33,16 +33,16 @@ export default function BookNow() {
       'Residential address': '',
       'Email': '',
       'Phone number': '',
-      'Date': '',
-      'Number of passengers': '',
-      'First pick up location': '', 
-      'First pick up time': '', 
-      'First drop off location': '',
-      'First drop off time': '',
-      'Second pick up location': '', 
-      'Second pick up time': '', 
-      'Second drop off location': '',
-      'Second drop off time': '',
+      'Date of trip': '',
+      'Rough # of passengers': '',
+      'First departure location': '', 
+      'First departure time': '', 
+      'First arrival location': '',
+      'First arrival time': '',
+      'Second departure location': '', 
+      'Second departure time': '', 
+      'Second arrival location': '',
+      'Second arrival time': '',
       'Other details': '',
     },
     onSubmit: async values => {
@@ -75,7 +75,7 @@ export default function BookNow() {
         return 'time';
       case key === 'Date': 
         return 'date';
-      case key === 'Number of passengers': 
+      case key === 'Rough # of passengers': 
         return 'number';
       default: 
         return 'text'
@@ -99,7 +99,7 @@ export default function BookNow() {
         <div className={styles.middle}>
           <Image src="/img/m-book.gif" width="300" height="300" alt="Book now" />
           <form onSubmit={formik.handleSubmit}>
-            <div className={`${styles.form} ${styles.formDecoration}`}>
+            <div className={`${styles.form} ${styles.formDecoration} ${styles.bookDecoration}`}>
               {Object.entries(formik.values).map(([key, value]) => {
                 const hasError = formik.errors[key] && formik.touched[key];
                 return (

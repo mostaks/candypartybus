@@ -1,6 +1,7 @@
 import Footer from '../footer';
 import styles from '../../styles/Desktop.module.css';
 import Link from 'next/link';
+import Item from './Item';
 import Image from 'next/image';
 import { useSpring, animated } from '@react-spring/web';
 import { useState } from 'react';
@@ -54,67 +55,80 @@ const Desktop = () => {
     <main className={styles.main}>
         <div className={styles.contentContainer}>
           <div className={styles.grid}>
-            <div className={styles.topLeft}>
-              {renderIf(0) ? (
-                <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
-                    <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
-                </animated.div>) : (
-                  <Link href="/fleet">
-                    <Image src="/img/p-pressbox.gif" height="76" width="131" alt="Our fleet" border="0"/>
-                  </Link>
-              )}
-            </div>
-            <div className={styles.middle}>
-              {renderIf(1) ? (
-                <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
-                    <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
-                </animated.div>) : (
-                  <Link href="/bookNow">
-                    <Image src="/img/p-jamcentral.gif" height="95" width="107" alt="Book now" border="0" />
-                  </Link>
-              )}
-            </div>
-            <div className={styles.topRight }>
-              {renderIf(1) ? (
-                <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
-                    <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
-                </animated.div>) : (
-                <Link href="/whatWeOffer">
-                  <Image src="/img/p-behind.gif" height="93" width="107" alt="What we offer" border="0" />
-                </Link>
-              )}
-            </div>
+            <Item 
+              style={styles.topLeft}
+              renderCondition={renderIf(0)}
+              handleClick={handleShow}
+              href="/fleet"
+              imgOptions={{
+                src: "/img/p-pressbox.gif",
+                height: "76",
+                width: "131",
+                alt: "Our fleet"
+              }}
+            />
+            <Item 
+              style={styles.middle}
+              renderCondition={renderIf(1)}
+              handleClick={handleShow}
+              href="/bookNow"
+              imgOptions={{
+                src: "/img/p-jamcentral.gif",
+                height: "95",
+                width: "107",
+                alt: "Book now"
+              }}
+            />
+            <Item 
+              style={styles.topRight}
+              renderCondition={renderIf(1)}
+              handleClick={handleShow}
+              href="/whatWeOffer"
+              imgOptions={{
+                src: "/img/p-behind.gif",
+                height: "93",
+                width: "107",
+                alt: "What we offer"
+              }}
+            />
           </div>
           <div className={styles.gridOuter}>
-            <div className={styles.test}>
-              {renderIf(1) ? (
-                <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
-                    <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
-                </animated.div>) : (
-                <Link href="/rules">
-                  <Image src="/img/p-junior.gif" height="120" width="140" alt="Rules and Regulations" border="0"/>
-                </Link>
-              )}
-            </div>
+            <Item 
+              style={styles.test}
+              renderCondition={renderIf(1)}
+              handleClick={handleShow}
+              href="/rules"
+              imgOptions={{
+                src: "/img/p-junior.gif",
+                height: "120",
+                width: "140",
+                alt: "Rules and regulations"
+              }}
+            />
             <div className={styles.middle}>
               {renderIf(2) ? (
                 <animated.div style={{...spins}}>
                   <Image onClick={() => window.location.reload()} src="/img/m-rick.gif" height="250" width="300" alt="Pwned" border="0" style={{cursor: 'pointer' }} />
                 </animated.div>
                 ) : (
-                <Image src="/img/candy-logo-bus.png" height="400" width="450" alt="Space Jam" border="0" />
+                  <>
+                    <Image className={styles.middleLogo} style={{ position: 'relative', top: 0 }} src="/img/candy-logo-bus.png" height="400" width="450" alt="Space Jam" border="0" />
+                    <div className={styles.call} size="-1">CALL NOW: <a className={styles.callNow} href="tel:130022639287">1300 CANDYBUS</a></div>
+                  </>
               )}
             </div>
-            <div className={styles.test}>
-              {renderIf(1) ? (
-                <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
-                    <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
-                </animated.div>) : (
-                <Link href="/hensBucksNights">
-                  <Image src="/img/p-studiostore.gif" height="92" width="104" alt="Hens and Bucks Nights" border="0" />
-                </Link>
-              )}
-            </div>
+            <Item 
+              style={styles.test}
+              renderCondition={renderIf(1)}
+              handleClick={handleShow}
+              href="/hensBucksNights"
+              imgOptions={{
+                src: "/img/p-studiostore.gif",
+                height: "92",
+                width: "104",
+                alt: "Hens and bucks nights"
+              }}
+            />
           </div>
           <div className={styles.grid}>
             <div className={styles.bottomLeft}>
@@ -126,16 +140,18 @@ const Desktop = () => {
             </div>
             <div className={styles.middle}>
             </div>
-            <div className={styles.bottomRight}>
-              {renderIf(1) ? (
-                <animated.div onClick={handleShow} style={{ cursor: 'pointer', ...show }}>
-                    <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
-                </animated.div>) : (
-                <Link href="/careers">
-                  <Image id="animate" src="/img/p-lineup.gif" height="92" width="103" alt="Careers" border="0"/>
-                </Link>
-              )}
-            </div>  
+            <Item 
+              style={styles.bottomRight}
+              renderCondition={renderIf(1)}
+              handleClick={handleShow}
+              href="/careers"
+              imgOptions={{
+                src: "/img/p-lineup.gif",
+                height: "92",
+                width: "104",
+                alt: "Careers"
+              }}
+            />
           </div>
           {clickCount <= 2 && (
             <Footer />

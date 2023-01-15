@@ -41,8 +41,15 @@
 }
 
 .formDecoration {
-  background: #0015ff;
   box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.398);
+}
+
+.bookDecoration {
+  background: rgb(188, 14, 255);
+}
+
+.careerDecoration {
+  background: #0015ff;
 }
 
 .label {

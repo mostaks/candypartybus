@@ -11,6 +11,10 @@ const validationSchema = yup.object({
   'Full name': yup.string().required('Required field'),
   'Email': yup.string().email().required('Required field'),
   'Phone number': yup.number().required('Required field'),
+  'Age': yup.string().required('Required field'),
+  'License held': yup.string().required('Required field'),
+  'Bus authority held': yup.string().required('Required field'),
+  'Employment experience': yup.string().required('Required field'),
   'Other details': yup.string(),
 })
 
@@ -21,6 +25,10 @@ export default function Careers() {
       'Full name': '',
       'Email': '',
       'Phone number': '',
+      'Age': '',
+      'License held': '',
+      'Bus authority held': '',
+      'Employment experience': '',
       'Other details': '',
     },
     onSubmit: async values => {
@@ -47,6 +55,21 @@ export default function Careers() {
     validationSchema
   });
 
+  const renderTextArea = ({ key, value, hasError }) => (
+    <textarea
+      id={key}
+      name={key}
+      type="text"
+      onChange={formik.handleChange}
+      value={value}
+      style={{
+        ...(hasError && {border: '1px solid red'}),
+        flex: 1
+      }}
+      placeholder={`${key}...`}
+    />
+  )
+
   return (
     <div className={styles.careerContainer}>
       <Nav />
@@ -55,27 +78,17 @@ export default function Careers() {
         <div className={styles.middle}>
           <Image src="/img/m-behind.gif" width="300" height="300" alt="Enquire within" />
           <form onSubmit={formik.handleSubmit}>
-            <div className={`${styles.formCol} ${styles.formDecoration}`}>
+            <div className={`${styles.formCol} ${styles.formDecoration} ${styles.careerDecoration}`}>
               {Object.entries(formik.values).map(([key, value]) => {
                 const hasError = formik.errors[key] && formik.touched[key];
                 return (
                 <div className={`${styles.singleCol} ${styles.fieldContainer}`} style={{ flexBasis: key === 'Other details' ? '100%' : 'initial' }} key={key}>
                   <label className={styles.label} htmlFor={key}>{key}</label>
                   {{
-                    'Other details': (
-                      <textarea
-                        id={key}
-                        name={key}
-                        type="text"
-                        onChange={formik.handleChange}
-                        value={value}
-                        style={{
-                          ...(hasError && {border: '1px solid red'}),
-                          flex: 1
-                        }}
-                        placeholder={`${key}...`}
-                      />
-                    ),
+                    'Other details': renderTextArea({ key, value, hasError }),
+                    'Employment experience': renderTextArea({ key, value, hasError }),
+                    'License held': renderTextArea({ key, value, hasError }),
+                    'Bus authority held': renderTextArea({ key, value, hasError }),
                   }[key] || (
                     <input
                       id={key}

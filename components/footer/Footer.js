@@ -7,8 +7,8 @@ const Footer = () => {
         <span style={{ display: 'flex', flexDirection: 'row',  gap: '8px'}} size="-1">CALL NOW: <a href="tel:130022639287" className={styles.callNow}>1300 CANDYBUS</a></span>
       </div>
       <div style={{display: 'flex', gap: '8px'}}>
-        <a href="https://www.instagram.com/wolfcharters_partybus/?hl=en">Instagram</a> 
-        <a href="https://www.facebook.com/Wolf-Charters-Pty-Ltd-Party-Bus-105525084230003/">Faecbook</a>
+        <a href="https://www.instagram.com/candypartybus/">Instagram</a> 
+        <a href="#">Facebook</a>
       </div>
       <div style={{textAlign: 'center', padding: '8px 0'}}>
         <span>We Service all of Sydney</span><br />
