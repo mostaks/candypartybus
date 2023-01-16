@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useRef } from 'react'
 import Nav from '../components/nav';
 import styles from '../styles/Service.module.css'
 import Breadcrumb from "../components/breadcrumb";
