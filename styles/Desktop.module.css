@@ -99,6 +99,8 @@
 
 .call {
   margin: -120px 0 60px;
+  font-style: italic;
+  word-spacing: 4px;
   text-align: center;
   font-weight: bolder;
   font-size: 30px;

@@ -45,5 +45,8 @@
   color: white;
   background-color: rgb(228, 67, 146);
   box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.398);
-  padding: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+
 }

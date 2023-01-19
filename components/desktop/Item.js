@@ -10,7 +10,8 @@ const Item = ({
   renderCondition,
   imgOptions,
   href,
-  handleClick
+  handleClick,
+  show
 }) => {
   return (
     <div className={style}>

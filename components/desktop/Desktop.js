@@ -56,6 +56,7 @@ const Desktop = () => {
         <div className={styles.contentContainer}>
           <div className={styles.grid}>
             <Item 
+            show={show}
               style={styles.topLeft}
               renderCondition={renderIf(0)}
               handleClick={handleShow}
@@ -68,6 +69,7 @@ const Desktop = () => {
               }}
             />
             <Item 
+            show={show}
               style={styles.middle}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
@@ -80,6 +82,7 @@ const Desktop = () => {
               }}
             />
             <Item 
+            show={show}
               style={styles.topRight}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
@@ -93,7 +96,8 @@ const Desktop = () => {
             />
           </div>
           <div className={styles.gridOuter}>
-            <Item 
+            <Item
+              show={show}
               style={styles.test}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
@@ -117,7 +121,8 @@ const Desktop = () => {
                   </>
               )}
             </div>
-            <Item 
+            <Item
+              show={show}
               style={styles.test}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
@@ -141,6 +146,7 @@ const Desktop = () => {
             <div className={styles.middle}>
             </div>
             <Item 
+            show={show}
               style={styles.bottomRight}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
