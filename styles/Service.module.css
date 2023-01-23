@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'DAYPOSTERBLACK';
+  src: url('/fonts/DAYPBL.ttf');
+}
+
 .container {
   padding: 0 2rem;
   margin: 0 auto;
@@ -40,10 +45,30 @@
 }
 
 .service {
-  color: white;
-  background-color: rgb(228, 67, 146);
+  color: black;
+  background-color: #fafa00;
   box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.398);
   padding: 8px;
+}
+
+.service:nth-of-type(1) {
+  color: white;
+  background-color: #70319d;
+}
+
+.service:nth-of-type(4) {
+  color: white;
+  background-color: #70319d;
+}
+
+.service:nth-of-type(5) {
+  color: white;
+  background-color: #70319d;
+}
+
+.service:nth-of-type(8) {
+  color: white;
+  background-color: #70319d;
 }
 
 .moveArea {
@@ -125,4 +150,8 @@
   display: grid;
   grid-template-columns: repeat(var(--num-columns), 1fr);
   grid-template-rows: repeat(var(--num-rows), 1fr);
+}
+
+.title {
+  font-family: 'DAYPOSTERBLACK', Tahoma, Geneva, Verdana, sans-serif;
 }

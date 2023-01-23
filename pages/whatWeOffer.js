@@ -50,7 +50,7 @@ export default function WhatWeOffer() {
         <div className={styles.middleContainer}>
           {services.map(({ title, description }) => (
             <div key={title} className={styles.service}>
-              <h3>{title}</h3>
+              <h3 className={styles.title}>{title}</h3>
               <p>{description}</p>
             </div>
           ))}

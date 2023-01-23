@@ -69,7 +69,7 @@ const Desktop = () => {
               }}
             />
             <Item 
-            show={show}
+              show={show}
               style={styles.middle}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
@@ -117,7 +117,7 @@ const Desktop = () => {
                 ) : (
                   <>
                     <Image className={styles.middleLogo} style={{ position: 'relative', top: 0 }} src="/img/candy-logo-bus.png" height="400" width="450" alt="Space Jam" border="0" />
-                    <div className={styles.call} size="-1">CALL NOW: <a className={styles.callNow} href="tel:130022639287">1300 CANDYBUS</a></div>
+                    <div className={styles.call} size="-1">📞<a className={styles.callNow} href="tel:130022639287">1300 CANDYBUS</a></div>
                   </>
               )}
             </div>

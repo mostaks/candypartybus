@@ -8,15 +8,15 @@ const services = [
     title: "80 passenger full size limo party bus (coming soon)",
     description: "Includes: Dance floor, Dance poles, Trippy interior, laser lights, crazy good sound system, Dj compatible, Smoke machine",
     image: {
-      src: "/img/p-bus.gif.png",
-      alt: "80 seat bus"
+      src: "/img/m-bigBus.gif",
+      alt: "80 seat bus COMING SOON"
     }
   },
   {
     title: "24 seater party bus",
     description: "Laser lights, Big sound system",
     image: {
-      src: "/img/p-bus.gif.png",
+      src: "/img/m-bus.gif",
       alt: "80 seat bus"
     }
   },
@@ -29,7 +29,7 @@ export default function Fleet() {
       <Breadcrumb page="Fleet" link="./fleet" />
       <div className={styles.container}>
         <div className={styles.imgContainer}>
-          <Image src="/img/m-bus.gif" alt="Its Britney" width={100} height={100} />
+          <Image src="/img/m-gazoo.gif" alt="Its Britney" width={100} height={100} />
         </div>
         <div className={styles.middleContainer}>
           {services.map(({ title, description, image }) => (

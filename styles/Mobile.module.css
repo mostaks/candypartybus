@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'DAYPOSTERBLACK';
+  src: url('/fonts/DAYPBL.ttf');
+}
+
 .container {
   padding: 0 2rem;
   background-image: url("/img/bg-stars.gif");
@@ -81,11 +86,8 @@
   text-align: center;
   font-weight: bolder;
   font-size: 22px;
-  color: black;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-text-stroke: 2px rgb(162, 55, 173);
-}
-
-.callNow {
-  color: white;
+  background-image: linear-gradient(to left, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: 'DAYPOSTERBLACK', Tahoma, Geneva, Verdana, sans-serif;
 }

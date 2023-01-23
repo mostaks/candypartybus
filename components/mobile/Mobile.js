@@ -7,7 +7,7 @@ const Mobile = () => {
   return (
     <main className={styles.main}>
         <Image src="/img/candy-logo-bus.png" height="250" width="300" alt="Space Jam" border="0" />
-        <p className={styles.call} size="-1">CALL NOW: <a className={styles.callNow} href="tel:130022639287">1300 CANDYBUS</a></p>
+        <p className={styles.call} size="-1">📞 <a className={styles.callNow} href="tel:130022639287">1300 CANDYBUS</a></p>
         <div className={styles.contentContainer}>
             <div className={styles.column}>
               <Link href="/bookNow">
