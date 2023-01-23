@@ -8,10 +8,9 @@ const Footer = () => {
         <a href="#">Facebook</a>
       </div>
       <div style={{textAlign: 'center', padding: '8px 0'}}>
-        <span>We Service all of Sydney</span><br />
-        <span>Western Sydney</span><br />
-        <span>Terrigal</span><br />
-        <span>Wollongong</span>
+        <span>Based in Sydney</span><br />
+        <span>Servicing areas from North to South Coast</span><br />
+        <span>and everywhere in between 👅</span><br />
       </div>
     </footer>
   )

@@ -7,6 +7,8 @@ import { useState } from "react";
 import * as emailjs from 'emailjs-com';
 import Breadcrumb from "../components/breadcrumb";
 
+// TODO: One way - return - drive round
+
 const validationSchema = yup.object({
   'Full name': yup.string().required('Required field'),
   'Residential address': yup.string().required('Required field'),
@@ -97,7 +99,7 @@ export default function BookNow() {
       <Breadcrumb page="Book now" link="./bookNow" />
       <div className={styles.container}>
         <div className={styles.middle}>
-          <Image src="/img/m-bus.gif" width="300" height="300" alt="Book now" />
+          <Image src="/img/m-bus-book.gif" width="900" height="300" alt="Book now" />
           <form onSubmit={formik.handleSubmit}>
             <div className={`${styles.form} ${styles.formDecoration} ${styles.bookDecoration}`}>
               {Object.entries(formik.values).map(([key, value]) => {

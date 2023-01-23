@@ -56,7 +56,8 @@ const Desktop = () => {
         <div className={styles.contentContainer}>
           <div className={styles.grid}>
             <Item 
-            show={show}
+              clickCount={clickCount}
+              show={show}
               style={styles.topLeft}
               renderCondition={renderIf(0)}
               handleClick={handleShow}
@@ -69,6 +70,7 @@ const Desktop = () => {
               }}
             />
             <Item 
+              clickCount={clickCount}
               show={show}
               style={styles.middle}
               renderCondition={renderIf(1)}
@@ -82,7 +84,8 @@ const Desktop = () => {
               }}
             />
             <Item 
-            show={show}
+            clickCount={clickCount}
+              show={show}
               style={styles.topRight}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
@@ -97,6 +100,7 @@ const Desktop = () => {
           </div>
           <div className={styles.gridOuter}>
             <Item
+            clickCount={clickCount}
               show={show}
               style={styles.test}
               renderCondition={renderIf(1)}
@@ -122,6 +126,7 @@ const Desktop = () => {
               )}
             </div>
             <Item
+            clickCount={clickCount}
               show={show}
               style={styles.test}
               renderCondition={renderIf(1)}
@@ -139,14 +144,15 @@ const Desktop = () => {
             <div className={styles.bottomLeft}>
               {clickCount < 2 && (
                 <animated.div onClick={handleHide} style={{ cursor: 'pointer', ...hide }}>
-                  <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
+                  <Image src={`/img/p-souvenirs${['', 2][clickCount]}.gif`} height="83" width="95" alt="Complaints" border="0"/>
                 </animated.div>
               )}
             </div>
             <div className={styles.middle}>
             </div>
             <Item 
-            show={show}
+              clickCount={clickCount}
+              show={show}
               style={styles.bottomRight}
               renderCondition={renderIf(1)}
               handleClick={handleShow}

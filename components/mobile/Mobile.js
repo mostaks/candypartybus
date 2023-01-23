@@ -15,29 +15,8 @@ const Mobile = () => {
               </Link>
             </div>
             <div className={styles.column}>
-              <Link href="/careers">
-                <Image id="animate" src="/img/p-lineup.gif" height="72" width="83" alt="Careers" border="0"/>
-              </Link>
-            </div>
-            <div className={styles.column}>
               <Link href="/whatWeOffer">
                 <Image src="/img/p-behind.gif" height="73" width="87" alt="What we offer" border="0" />
-              </Link>
-            </div>
-            <div className={styles.column}>
-              <Link href="/rules">
-                <Image src="/img/p-junior.gif" height="100" width="120" alt="Rules and Regulations" border="0"/>
-              </Link>
-            </div>
-            
-            <div className={styles.column}>
-              <Link href="/hensBucksNights">
-                <Image src="/img/p-studiostore.gif" height="72" width="84" alt="Hens and Bucks Nights" border="0" />
-              </Link>
-            </div>
-            <div className={styles.column}>
-              <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                <Image src="/img/p-souvenirs.gif" height="73" width="85" alt="Complaints" border="0"/>
               </Link>
             </div>
             <div className={styles.column}>
@@ -45,6 +24,27 @@ const Mobile = () => {
                 <Image src="/img/p-pressbox.gif" height="66" width="111" alt="Our fleet" border="0"/>
               </Link>
             </div>
+            <div className={styles.column}>
+              <Link href="/hensBucksNights">
+                <Image src="/img/p-studiostore.gif" height="72" width="84" alt="Hens and Bucks Nights" border="0" />
+              </Link>
+            </div>
+            <div className={styles.column}>
+              <Link href="/rules">
+                <Image src="/img/p-junior.gif" height="100" width="120" alt="Rules and Regulations" border="0"/>
+              </Link>
+            </div>
+            <div className={styles.column}>
+              <Link href="/careers">
+                <Image id="animate" src="/img/p-lineup.gif" height="72" width="83" alt="Careers" border="0"/>
+              </Link>
+            </div>
+            <div className={styles.column}>
+              <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <Image src="/img/p-souvenirs.gif" height="73" width="85" alt="Complaints" border="0"/>
+              </Link>
+            </div>
+            
         </div>
         <Footer />
     </main>

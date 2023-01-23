@@ -1,9 +1,7 @@
 import React from 'react'
-import styles from '../../styles/Desktop.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSpring, animated } from '@react-spring/web';
-import { useState } from 'react';
+import { animated } from '@react-spring/web';
 
 const Item = ({
   style,
@@ -11,13 +9,15 @@ const Item = ({
   imgOptions,
   href,
   handleClick,
-  show
+  show,
+  clickCount
 }) => {
+  const clickImage = `/img/p-souvenirs${['', '', 3][clickCount]}.gif`;
   return (
     <div className={style}>
       {renderCondition ? (
         <animated.div onClick={handleClick} style={{ cursor: 'pointer', ...show }}>
-            <Image src="/img/p-souvenirs.gif" height="83" width="95" alt="Complaints" border="0"/>
+            <Image src={clickImage} height="83" width="95" alt="Complaints" border="0"/>
         </animated.div>
       ) : (
           <Link href={href}>

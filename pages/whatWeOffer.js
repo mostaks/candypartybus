@@ -45,7 +45,32 @@ export default function WhatWeOffer() {
       <Breadcrumb page="What we offer" link="./whatWeOffer" />
       <div className={styles.container}>
         <div className={styles.imgContainer}>
-          <Image src="/img/m-britney.gif" alt="Its Britney" width={100} height={100} />
+          <Image src="/img/m-the-girls.gif" className={styles.imgBorder} alt="Its Britney" width={500} height={400} />
+        </div>
+        <div className={styles.middleContainer}>
+          <div className={`${styles.mainService}`}>
+            <h2 className={styles.heading}>What we offer</h2>
+            <p>
+              At the first Candy Party Bus board meeting, we had our team members who are all seasoned rave heads sit down and pin point exactly what makes or breaks a night out on the town. We understand the frustration of paying top dollar for some almost standard school bus to show up, claiming to be your “go-to bus hire company”, and that’s if they dont make up some BS about how your bus has broken down, leaving you at a bus stop with no way to get to your event. 
+            </p>
+            <p>
+              Here at Candy Party Bus we pride ourselves on being the “casual professionals”, this includes the craziest and most out there party buses with staff who are within the party industry that can help get the party started while maintaining the professional logistics of a gold standard transport company. 
+            </p>
+            <p>
+              Options for hire include:
+            </p>
+            <ul>
+              <li>One way (pickup and drop off) </li>
+              <li>Return (pickup/drop off, picked up later and returned home)</li>
+              <li>Drive around-this is for groups that have no final destination, the bus is the party. We offer an agreed amount of hours which we drive around, stopping at your request for food/toilet breaks, allowing you to party within the safety of the bus.</li>
+            </ul>
+            <p>
+              Our buses have been kitted from the inside out. Our smaller 24 seat buses accomodate for the smaller, tamer groups. They include an insane sound system (probably too big for a bus that size) and party lights/lasers.
+            </p>
+            <p>
+              For our untamed groups we have our full size (and almost bullet proof) 80 passenger Limo buses which include a completely covered trippy design interior, large dance floor with multiple dance poles, DJ compatibility, an insane light show sound system rear wall which is unlike any buses available for hire aswell as seperate party lights/lasers. We can also provide an eski with ice to keep your drinks cool upon request.
+            </p>
+          </div>
         </div>
         <div className={styles.middleContainer}>
           {services.map(({ title, description }) => (
