@@ -1,6 +1,5 @@
 import Footer from '../footer';
 import styles from '../../styles/Desktop.module.css';
-import Link from 'next/link';
 import Item from './Item';
 import Image from 'next/image';
 import { useSpring, animated } from '@react-spring/web';
@@ -51,6 +50,7 @@ const Desktop = () => {
   };
 
   const renderIf = (num) => clickCount > num && clickCount <= 6;
+
   return (
     <main className={styles.main}>
         <div className={styles.contentContainer}>
@@ -108,7 +108,7 @@ const Desktop = () => {
               href="/rules"
               imgOptions={{
                 src: "/img/p-junior.gif",
-                height: "120",
+                height: "90",
                 width: "140",
                 alt: "Rules and regulations"
               }}
@@ -126,7 +126,7 @@ const Desktop = () => {
               )}
             </div>
             <Item
-            clickCount={clickCount}
+              clickCount={clickCount}
               show={show}
               style={styles.test}
               renderCondition={renderIf(1)}
@@ -144,7 +144,7 @@ const Desktop = () => {
             <div className={styles.bottomLeft}>
               {clickCount < 2 && (
                 <animated.div onClick={handleHide} style={{ cursor: 'pointer', ...hide }}>
-                  <Image src={`/img/p-souvenirs${['', 2][clickCount]}.gif`} height="83" width="95" alt="Complaints" border="0"/>
+                  <Image src={`/img/p-souvenirs${['', 2][clickCount]}.gif`} height="83" width="95" alt="Dont Click Here!" border="0"/>
                 </animated.div>
               )}
             </div>

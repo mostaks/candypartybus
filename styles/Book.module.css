@@ -65,6 +65,26 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.398);
 }
 
+.radioContainer {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.radioWrapper {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.radio {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 .twoCols {
   width: calc(50% - 4px);
 }

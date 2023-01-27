@@ -7,8 +7,6 @@ import { useState } from "react";
 import * as emailjs from 'emailjs-com';
 import Breadcrumb from "../components/breadcrumb";
 
-// TODO: One way - return - drive round
-
 const validationSchema = yup.object({
   'Full name': yup.string().required('Required field'),
   'Residential address': yup.string().required('Required field'),
@@ -16,13 +14,29 @@ const validationSchema = yup.object({
   'Phone number': yup.number().required('Required field'),
   'Date of trip': yup.string().required('Required field'),
   'Rough # of passengers': yup.number().required('Required field'),
-  'First departure location': yup.string().required('Required field'),
+  'First departure location': yup.string().when('Trip type', {
+    is: (val) => val !== 'Drive around',
+    then: yup.string().required('Required field'),
+    otherwise: yup.string()
+  }),
   'First departure time': yup.string(),
-  'First arrival location': yup.string().required('Required field'),
+  'First arrival location': yup.string().when('Trip type', {
+    is: (val) => val !== 'Drive around',
+    then: yup.string().required('Required field'),
+    otherwise: yup.string()
+  }),
   'First arrival time': yup.string(),
-  'Second departure location': yup.string().required('Required field'),
+  'Second departure location': yup.string().when('Trip type', {
+    is: (val) => val === 'Return',
+    then: yup.string().required('Required field'),
+    otherwise: yup.string()
+  }),
   'Second departure time': yup.string(),
-  'Second arrival location': yup.string().required('Required field'),
+  'Second arrival location': yup.string().when('Trip type', {
+    is: (val) => val === 'Return',
+    then: yup.string().required('Required field'),
+    otherwise: yup.string()
+  }),
   'Second arrival time': yup.string(),
   'Other details': yup.string(),
 })
@@ -37,6 +51,7 @@ export default function BookNow() {
       'Phone number': '',
       'Date of trip': '',
       'Rough # of passengers': '',
+      'Trip type': 'Return',
       'First departure location': '', 
       'First departure time': '', 
       'First arrival location': '',
@@ -47,7 +62,8 @@ export default function BookNow() {
       'Second arrival time': '',
       'Other details': '',
     },
-    onSubmit: async values => {
+    onSubmit: async (values) => {
+      console.log('values:', values);
       const templateParams = {
         from_name: values['Full name'],
         to_name: 'Someone',
@@ -75,9 +91,9 @@ export default function BookNow() {
     switch(true) {
       case key.includes('time'): 
         return 'time';
-      case key === 'Date': 
+      case key.includes('Date'): 
         return 'date';
-      case key === 'Rough # of passengers': 
+      case key.includes('passengers'): 
         return 'number';
       default: 
         return 'text'
@@ -105,9 +121,15 @@ export default function BookNow() {
               {Object.entries(formik.values).map(([key, value]) => {
                 const hasError = formik.errors[key] && formik.touched[key];
                 return (
-                  <div className={`${styles.twoCols} ${styles.fieldContainer}`} key={key} style={{
-                    ...(key === 'Other details' && { width: '100%' })
-                  }}>
+                  <div 
+                    className={
+                      `${styles.twoCols} ${styles.fieldContainer} ${key === 'Trip type' && styles.radioContainer}`
+                    } 
+                    key={key} 
+                    style={{
+                      ...(key === 'Other details' && { width: '100%' })
+                    }}
+                  >
                     <label className={styles.label} htmlFor={key}>{key}</label>
                     {{
                       'Other details': (
@@ -123,6 +145,23 @@ export default function BookNow() {
                           placeholder={`${key}...`}
                         />
                       ),
+                      'Trip type': (
+                        <div className={styles.radioWrapper}>
+                          {['One way', 'Return', 'Drive around'].map((trip) => (
+                            <div key={trip} className={styles.radio}>
+                              <label>{trip}</label>
+                              <input 
+                                id={trip}
+                                type="radio"
+                                name={key} 
+                                onChange={formik.handleChange}
+                                value={trip}
+                                checked={formik.values['Trip type'] === trip}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )
                     }[key] || (
                       <input
                         id={key}
