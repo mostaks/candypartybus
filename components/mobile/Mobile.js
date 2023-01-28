@@ -55,8 +55,8 @@ const Mobile = () => {
   return (
     <main className={styles.main}>
         {renderIf(2) ? (
-          <animated.div style={{...spins}}>
-            <Image onClick={() => window.location.reload()} src="/img/m-rick.gif" height="250" width="300" alt="Pwned" border="0" style={{cursor: 'pointer', marginTop: '100%' }} />
+          <animated.div style={{transformOrigin: 'center', marginTop: '50%', ...spins}}>
+            <Image onClick={() => window.location.reload()} src="/img/m-rick.gif" height="250" width="300" alt="Pwned" border="0" style={{cursor: 'pointer'}} />
           </animated.div>
           ) : (
             <>
