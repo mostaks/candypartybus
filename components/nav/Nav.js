@@ -6,8 +6,8 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logoContainer}>
-        <Link href={"/"}>
-          <Image src="/img/candy-logo.png" alt="Candy logo" className={styles.logo} width={70} height={70} />
+        <Link style={{height: 0}} href={"/"}>
+          <Image src="/img/candy-logo-bus.png" alt="Candy logo" className={styles.logo} width={90} height={90} />
         </Link>
       </div>
     </nav>

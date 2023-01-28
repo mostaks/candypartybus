@@ -96,24 +96,17 @@
   justify-content: center;
 }
 
-@media (max-width: 950px) {
-  .imgBorder {
-    height: 200px;
-    width: 600px;
-  }
-}
-
-@media (max-width: 800px) {
-  .imgBorder {
-    height: 160px;
-    width: 480px;
-  }
-}
-
 @media (max-width: 550px) {
   .imgBorder {
-    height: 100px;
-    width: 300px;
+    height: 200px;
+    width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .imgBorder {
+    height: 200px;
+    width: 280px;
   }
 }
 

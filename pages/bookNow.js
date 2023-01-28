@@ -115,7 +115,7 @@ export default function BookNow() {
       <Breadcrumb page="Book now" link="./bookNow" />
       <div className={styles.container}>
         <div className={styles.middle}>
-          <Image className={styles.imgBorder} src="/img/m-bus-book.gif" width="900" height="300" alt="Book now" />
+          <Image className={styles.imgBorder} src="/img/m-bus-book.gif" width="500" height="300" alt="Book now" />
           <form onSubmit={formik.handleSubmit}>
             <div className={`${styles.form} ${styles.formDecoration} ${styles.bookDecoration}`}>
               {Object.entries(formik.values).map(([key, value]) => {
