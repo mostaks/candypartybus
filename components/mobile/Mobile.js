@@ -109,7 +109,7 @@ const Mobile = () => {
                   src: "/img/p-pressbox.gif",
                   height: "66",
                   width: "111",
-                  alt: "Our fleet"
+                  alt: "Our buses"
                 }}
               />
             </div>
@@ -139,7 +139,7 @@ const Mobile = () => {
                 href="/rules"
                 imgOptions={{
                   src: "/img/p-junior.gif",
-                  height: "75",
+                  height: "65",
                   width: "120",
                   alt: "Rules and regulations"
                 }}

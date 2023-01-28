@@ -108,7 +108,7 @@ const Desktop = () => {
               href="/rules"
               imgOptions={{
                 src: "/img/p-junior.gif",
-                height: "90",
+                height: "80",
                 width: "140",
                 alt: "Rules and regulations"
               }}

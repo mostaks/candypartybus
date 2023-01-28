@@ -35,7 +35,7 @@ export default function Fleet() {
           {services.map(({ title, description, image }) => (
             <div key={title} className={styles.service}>
               {image.src && (
-                <Image style={{margin: '0 auto'}} src={image.src} width="200" height="150" alt={image.alt} />
+                <Image className={styles.imgBorder} style={{margin: '0 auto'}} src={image.src} width="200" height="150" alt={image.alt} />
               )}
               <h3>{title}</h3>
               <p dangerouslySetInnerHTML={{ __html: description }}></p>
