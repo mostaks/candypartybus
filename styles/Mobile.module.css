@@ -59,6 +59,20 @@
   }
 }
 
+@media (max-width: 450px) {
+  .pwned {
+    height: 200px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pwned {
+    height: 150px;
+    width: 200px;
+  }
+}
+
 #animate {
   position:absolute;
   animation:float 3s ease-in-out infinite;
@@ -91,3 +105,4 @@
   color: transparent;
   font-family: 'DAYPOSTERBLACK', Tahoma, Geneva, Verdana, sans-serif;
 }
+
