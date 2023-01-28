@@ -60,7 +60,7 @@ const Mobile = () => {
           </animated.div>
           ) : (
             <>
-              <Image src="/img/candy-logo-bus.png" height="250" width="300" alt="Space Jam" border="0" />
+              <Image src="/img/candy-logo-bus.png" height="220" width="300" alt="Candy logo" border="0" />
               <p className={styles.call} size="-1">📞 <a className={styles.callNow} href="tel:130022639287">1300 CANDYBUS</a></p>
             </>
         )}

@@ -103,7 +103,7 @@
 }
 
 .call {
-  margin: -120px 0 60px;
+  margin: -40px 0 60px;
   font-style: italic;
   letter-spacing: 1.5px;
   text-align: center;
@@ -120,24 +120,24 @@
 @media (max-width: 1156px) {
   .middleLogo {
     width: 350px;
-    height: 300px;
+    height: 260px;
   }
 
   .call {
     font-size: 22px;
-    margin: -100px 0 60px;
+    margin: -30px 0 60px;
   }
 }
 
 @media (max-width: 1051px) {
   .middleLogo {
     width: 250px;
-    height: 200px;
+    height: 180px;
   }
 
   .call {
     font-size: 16px;
-    margin: -60px 0 60px;
+    margin: -20px 0 60px;
   }
 }
 
@@ -149,6 +149,6 @@
 
   .call {
     font-size: 14px;
-    margin: -30px 0 60px;
+    margin: -10px 0 60px;
   }
 }
