@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Fredoka One';
+  src: url('/fonts/FredokaOne-Regular.ttf');
+}
+
 .container {
   padding: 2rem 2rem;
   margin: 0 auto;
@@ -159,9 +164,8 @@
   color: red;
 }
 
-.button {
+/* .button {
   margin: 8px;
-  background-color: grey;
   color: white;
   text-align: center;
   box-sizing: border-box;
@@ -169,4 +173,62 @@
   width: 100%;
   max-width: 180px;
   padding: 8px 0;
+} */
+
+.button {
+  height: 50px;
+  width: 165px;
+  cursor: pointer;
+  background-color: #08e1ae;
+  background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
+  border: none;
+  border-radius: 50px 50px 30px 30px;
+  transition: 1s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  font-size: 30px;
+  text-decoration: none;
+  color: rgba(37, 61, 29, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px auto 0;
+  font-family: 'Fredoka One', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.button:active {
+  border: none;
+  outline: none;
+}
+
+.button:hover .scale {
+  letter-spacing: 5px;
+  font-size: 25px;
+  transition: 1s;
+}
+
+.rotate1,
+.rotate2,
+.rotate3,
+.rotate4 {
+  transition: 1s;
+}
+
+button:hover .rotate1 {
+  transform: rotate(15deg);
+}
+
+.button:hover .rotate2 {
+  transform: rotate(-15deg);
+}
+
+.button:hover .rotate3 {
+  transform: rotate(10deg);
+}
+
+.button:hover .rotate4 {
+  transform: rotate(-25deg);
+}
+
+.button:active {
+  filter: hue-rotate(90deg);
 }

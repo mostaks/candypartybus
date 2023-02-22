@@ -181,7 +181,14 @@ export default function BookNow() {
                 )
               })}
             </div>
-            <button className={styles.button} disabled={submitted} type="submit">Submit</button>
+            <button className={`${styles.button} ${styles.slime}`} disabled={submitted} type="submit">
+              <div className={`${styles.scale} ${styles.rotate4}`}>s</div>
+              <div className={`${styles.scale} ${styles.rotate2}`}>u</div>
+              <div className={`${styles.scale} ${styles.rotate3}`}>b</div>
+              <div className={`${styles.scale} ${styles.rotate1}`}>m</div>
+              <div className={`${styles.scale} ${styles.rotate2}`}>i</div>
+              <div className={`${styles.scale} ${styles.rotate3}`}>t</div>
+            </button>
           </form> 
         </div>
       </div>
