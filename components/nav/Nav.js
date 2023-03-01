@@ -7,7 +7,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <div className={styles.logoContainer}>
         <Link style={{height: 0}} href={"/"}>
-          <Image src="/img/candy-logo-bus.png" alt="Candy logo" className={styles.logo} width={90} height={90} />
+          <Image src="/img/candy-logo-bus.png" alt="Candy logo" className={styles.logo} width={90} height={76} />
         </Link>
       </div>
     </nav>
