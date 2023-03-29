@@ -13,8 +13,6 @@ const Meta = () => {
 
       At our party bus company, we pride ourselves on our commitment to customer satisfaction. Our team of professional drivers are experienced, courteous, and always on time. We understand the importance of punctuality and reliability, and we go above and beyond to ensure that your transportation needs are met in a timely and efficient manner.
 
-      We offer a range of packages to suit any budget and event size, from intimate gatherings to large-scale celebrations. Whether you're planning a bachelor party, a school formal, or a corporate event, our party buses are the perfect choice for a memorable and hassle-free experience.
-
       So why wait? Contact us today to book your next event with the best party bus company in Sydney. Let us take care of the transportation, so you can focus on having a good time!"
       />
       <meta name="keywords" content="Party bus Limousine rental Luxury transportation Group transportation Bachelor/bachelorette party Wedding transportation Prom transportation Corporate event transportation Nightlife transportation City tours Entertainment transportation Birthday party transportation Event rental Chauffeur service Shuttle service" />
