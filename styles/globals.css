@@ -4,8 +4,8 @@
 }
 
 :root {
-    --color: var(--yellow-5);
-    --shadow: var(--yellow-8);
+    --color: var(--lime-5);
+    --shadow: var(--lime-4);
     --glare: hsl(0 0% 100% / 0.75);
     --font-size: var(--font-size-fluid-3);
     --transition: 0.2s;
@@ -297,7 +297,7 @@
     --lime-1: #e9fac8;
     --lime-2: #d8f5a2;
     --lime-3: #c0eb75;
-    --lime-4: #a9e34b;
+    --lime-4: #9dff00;
     --lime-5: #94d82d;
     --lime-6: #82c91e;
     --lime-7: #74b816;
