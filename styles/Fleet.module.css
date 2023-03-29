@@ -5,9 +5,9 @@
 }
 
 .background {
-  background-image: url("/img/bg-alfoil.gif");
+  background-image: url("/img/bg-space.gif");
   background-size: cover;
-  background-position: top;
+  background-position: 50% 0;
 }
 
 .middle {
@@ -29,9 +29,8 @@
   margin: auto;
   height: 100%;
   gap: 12px;
-  width: 50%;
+  width: 60%;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
 }
 
 .imgBorder {

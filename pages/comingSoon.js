@@ -29,7 +29,7 @@ export default function ComingSoon() {
                 <div ref={rightEye} className={styles.eye}></div>
               </div>
             </section>
-          Coming soon...
+          Told you it was boring...
         </div>
       </div>
     </>
