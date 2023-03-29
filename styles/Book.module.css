@@ -174,11 +174,11 @@
   color: transparent;
   position: relative;
   transition: background 0.2s;
-  background: var(--gray-8);
+  background: var(--violet-12);
 }
 
 .button:hover {
-  background: lightcyan;
+  background: black;
 }
 
 .span {
@@ -203,6 +203,10 @@
 
 .hidden {
   display: none;
+}
+
+.disabled {
+  background: black;
 }
 
 .span:last-of-type {
