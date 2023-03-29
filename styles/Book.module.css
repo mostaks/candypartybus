@@ -103,14 +103,14 @@
 
 @media (max-width: 550px) {
   .imgBorder {
-    height: 200px;
+    height: 340px;
     width: 400px;
   }
 }
 
 @media (max-width: 500px) {
   .imgBorder {
-    height: 200px;
+    height: 240px;
     width: 280px;
   }
 }

@@ -18,7 +18,7 @@ const services = [
   },
   {
     title: "FORMALS",
-    description: "GoFor reliable chartering services for school formals, choose Candy party buses range of buses today for a cost-effective, efficient service."
+    description: "Reliable chartering services for school formals, choose Candy party buses today for a cost-effective, efficient service."
   },
   {
     title: " SCHOOL EXCURSIONS",
