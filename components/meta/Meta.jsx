@@ -6,7 +6,7 @@ const propTypes = {};
 const Meta = () => {
   return (
     <Head>
-      <title>Candy Party Bus Hire</title>
+      <title>CANDY PARTY BUS HIRE ⭐️⭐️⭐️⭐️⭐️</title>
       <meta name="description" content="Candy Party Bus is the premier transportation provider in Sydney. We specialise in providing fun and affordable transportation for all event types, from weddings to birthday parties to nights out on the town."
       />
       <meta name="keywords" content="Party bus Limousine rental Luxury transportation Group transportation Bachelor/bachelorette party Wedding transportation Prom transportation Corporate event transportation Nightlife transportation City tours Entertainment transportation Birthday party transportation Event rental Chauffeur service Shuttle service" />
