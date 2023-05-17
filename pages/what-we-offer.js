@@ -42,7 +42,7 @@ export default function WhatWeOffer() {
   return (
     <div className={styles.background}>
       <Nav />
-      <Breadcrumb page="What we offer" link="./whatWeOffer" />
+      <Breadcrumb page="What we offer" link="./what-we-offer" />
       <div className={styles.container}>
         <div className={styles.imgContainer}>
           <Image src="/img/m-the-girls.gif" className={styles.imgBorder} alt="Its Britney" width={500} height={400} />

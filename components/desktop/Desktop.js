@@ -75,7 +75,7 @@ const Desktop = () => {
               style={styles.middle}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
-              href="/bookNow"
+              href="/book-now"
               imgOptions={{
                 src: "/img/p-jamcentral.gif",
                 height: "95",
@@ -89,7 +89,7 @@ const Desktop = () => {
               style={styles.topRight}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
-              href="/whatWeOffer"
+              href="/what-we-offer"
               imgOptions={{
                 src: "/img/p-behind.gif",
                 height: "93",
@@ -131,7 +131,7 @@ const Desktop = () => {
               style={styles.test}
               renderCondition={renderIf(1)}
               handleClick={handleShow}
-              href="/hensBucksNights"
+              href="/hens-bucks-nights"
               imgOptions={{
                 src: "/img/p-studiostore.gif",
                 height: "92",

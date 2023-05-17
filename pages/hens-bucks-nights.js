@@ -7,7 +7,7 @@ export default function HensBucks() {
   return (
     <div className={styles.background}>
       <Nav />
-      <Breadcrumb page="Hens and bucks nights" link="./hensBucksNights" />
+      <Breadcrumb page="Hens and bucks nights" link="./hens-bucks-nights" />
       <div className={styles.container}>
         <div className={styles.imgContainer}>
           <Image src="/img/m-the-girls.gif" className={styles.imgBorder} alt="Its Britney" width={500} height={400} />

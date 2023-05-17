@@ -110,7 +110,7 @@ export default function BookNow() {
   return (
     <div className={styles.bookContainer}>
       <Nav />
-      <Breadcrumb page="Book now" link="./bookNow" />
+      <Breadcrumb page="Book now" link="./book-now" />
       <div className={styles.container}>
         <div className={styles.middle}>
           <Image className={styles.imgBorder} src="/img/m-bus-book.gif" width="450" height="400" alt="Book now" />
