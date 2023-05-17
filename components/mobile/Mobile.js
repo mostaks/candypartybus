@@ -61,7 +61,7 @@ const Mobile = () => {
           ) : (
             <>
               <Image src="/img/candy-logo-bus.png" height="220" width="300" alt="Candy logo" border="0" />
-              <p className={styles.call} size="-1">📞 <a className={styles.callNow} href="tel:130022639287">1300 CANDYBUS</a></p>
+              <p className={styles.call} size="-1">📞 <a className={styles.callNow} href="tel:1800226392">1800 CANDYBUS</a></p>
             </>
         )}
         <div className={styles.contentContainer}>
