@@ -15,6 +15,20 @@ const Meta = () => {
       <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" />
       <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
+      {/* <!-- Google tag (gtag.js) --> */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11181810861"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11181810861', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
     </Head>
   );
 };
