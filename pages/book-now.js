@@ -64,12 +64,14 @@ export default function BookNow() {
     },
     onSubmit: async (values) => {
       const templateParams = {
-        from_name: values['Full name'],
-        to_name: 'Someone',
-        subject: `${values['Full name']}-${values['Date']}}`,
+        from_name: values["Email"],
+        reply_to: values["Email"],
+        to_name: "Jamie",
+        subject: `${values["Full name"]}-${values["Date"]}}`,
         message: `New booking:
-         ${Object.entries(values).map(([key, val]) => `${key} ${val}
-         `)}
+         ${Object.entries(values)
+           .map(([key, val]) => `${key}: ${val}`)
+           .join("\n")}
         `,
       };
 
