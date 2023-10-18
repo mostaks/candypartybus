@@ -52,12 +52,12 @@ export default function BookNow() {
       'Date of trip': '',
       'Rough # of passengers': '',
       'Trip type': 'Return',
-      'First departure location': '', 
-      'First departure time': '', 
+      'First departure location': '',
+      'First departure time': '',
       'First arrival location': '',
       'First arrival time': '',
-      'Second departure location': '', 
-      'Second departure time': '', 
+      'Second departure location': '',
+      'Second departure time': '',
       'Second arrival location': '',
       'Second arrival time': '',
       'Other details': '',
@@ -68,16 +68,16 @@ export default function BookNow() {
         to_name: 'Someone',
         subject: `${values['Full name']}-${values['Date']}}`,
         message: `New booking:
-         ${Object.entries(values).map(([key, val]) => `${key} ${val} 
+         ${Object.entries(values).map(([key, val]) => `${key} ${val}
          `)}
         `,
       };
 
       const { text } = await emailjs.send(
-        'service_dudseb6',
-        'template_1y1kyme',
+        "service_us3dlaq",
+        "template_1y1kyme",
         templateParams,
-        '0mNp1V1YnHseBlSf6'
+        "0mNp1V1YnHseBlSf6"
       );
 
       setSubmitted(text === 'OK');
@@ -87,22 +87,22 @@ export default function BookNow() {
 
   const renderFormType = (key) => {
     switch(true) {
-      case key.includes('time'): 
+      case key.includes('time'):
         return 'time';
-      case key.includes('Date'): 
+      case key.includes('Date'):
         return 'date';
-      case key.includes('passengers'): 
+      case key.includes('passengers'):
         return 'number';
-      default: 
+      default:
         return 'text'
     }
   }
 
   const renderMin = (key) => {
     switch(true) {
-      case key === 'Date': 
+      case key === 'Date':
         return new Date().toISOString().split("T")[0];
-      default: 
+      default:
         return 0;
     }
   }
@@ -119,11 +119,11 @@ export default function BookNow() {
               {Object.entries(formik.values).map(([key, value]) => {
                 const hasError = formik.errors[key] && formik.touched[key];
                 return (
-                  <div 
+                  <div
                     className={
                       `${styles.twoCols} ${styles.fieldContainer} ${key === 'Trip type' && styles.radioContainer}`
-                    } 
-                    key={key} 
+                    }
+                    key={key}
                     style={{
                       ...(key === 'Other details' && { width: '100%' })
                     }}
@@ -148,10 +148,10 @@ export default function BookNow() {
                           {['One way', 'Return', 'Drive around'].map((trip) => (
                             <div key={trip} className={styles.radio}>
                               <label>{trip}</label>
-                              <input 
+                              <input
                                 id={trip}
                                 type="radio"
-                                name={key} 
+                                name={key}
                                 onChange={formik.handleChange}
                                 value={trip}
                                 checked={formik.values['Trip type'] === trip}
@@ -213,7 +213,7 @@ export default function BookNow() {
               <span className={`${styles.span}`}>{`Submit${submitted ? 'ted' : ''}!`}</span>
               <span className={`${styles.span} ${styles.hidden}`} aria-hidden="true">Submit!</span>
             </button>
-          </form> 
+          </form>
         </div>
       </div>
     </div>
